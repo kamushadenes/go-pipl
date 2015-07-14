@@ -29,60 +29,62 @@ type Person struct {
 	Jobs           []Job          `json:"jobs"`
 	Names          []Name         `json:"names"`
 	Phones         []Phone        `json:"phones"`
-	Urls           []Url          `json:"urls"`
+	URLs           []URL          `json:"urls"`
 	Usernames      []Username     `json:"usernames"`
 	UserIDs        []UserID       `json:"user_ids"`
 }
 
+type DateRange struct {
+	End   string `json:"end"`
+	Start string `json:"start"`
+}
+
 type Dob struct {
-	DateRange struct {
-		End   string `json:"end"`
-		Start string `json:"start"`
-	} `json:"date_range"`
-	Display string `json:"display"`
+	DateRange DateRange `json:"date_range"`
+	Display   string    `json:"display"`
 }
 
 type Gender struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Content  string `json:"content"`
 }
 
 type OriginCountry struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Country  string `json:"content"`
 }
 
 type Ethnicity struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Content  string `json:"content"`
 }
 
 type Language struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Language string `json:"language"`
 	Region   string `json:"region"`
 	Display  string `json:"display"`
 }
 
 type Username struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Content  string `json:"content"`
 }
 
 type UserID struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Content  string `json:"content"`
 }
 
 type Relationship struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Type     string `json:"@type"`
 	Subtype  string `json:"@subtype"`
 	Person
 }
 
 type Address struct {
-	Inferred  string `json:"@inferred,omitempty"`
+	Inferred  bool   `json:"@inferred,omitempty"`
 	Type      string `json:"@type"`
 	Country   string `json:"country"`
 	State     string `json:"state"`
@@ -97,18 +99,15 @@ type Address struct {
 }
 
 type Education struct {
-	Inferred  string `json:"@inferred,omitempty"`
-	DateRange struct {
-		End   string `json:"end"`
-		Start string `json:"start"`
-	} `json:"date_range"`
-	Degree  string `json:"degree"`
-	Display string `json:"display"`
-	School  string `json:"school"`
+	Inferred  bool      `json:"@inferred,omitempty"`
+	DateRange DateRange `json:"date_range"`
+	Degree    string    `json:"degree"`
+	Display   string    `json:"display"`
+	School    string    `json:"school"`
 }
 
 type Email struct {
-	Inferred      string `json:"@inferred,omitempty"`
+	Inferred      bool   `json:"@inferred,omitempty"`
 	Type          string `json:"@type"`
 	Address       string `json:"address"`
 	AddressMd5    string `json:"address_md5"`
@@ -117,25 +116,22 @@ type Email struct {
 }
 
 type Image struct {
-	Inferred       string `json:"@inferred,omitempty"`
+	Inferred       bool   `json:"@inferred,omitempty"`
 	ThumbnailToken string `json:"thumbnail_token"`
 	URL            string `json:"url"`
 }
 
 type Job struct {
-	Inferred     string `json:"@inferred,omitempty"`
-	Title        string `json:"title"`
-	Organization string `json:"organization"`
-	Industry     string `json:"industry"`
-	DateRange    struct {
-		End   string `json:"end"`
-		Start string `json:"start"`
-	} `json:"date_range"`
-	Display string `json:"display"`
+	Inferred     bool      `json:"@inferred,omitempty"`
+	Title        string    `json:"title"`
+	Organization string    `json:"organization"`
+	Industry     string    `json:"industry"`
+	DateRange    DateRange `json:"date_range"`
+	Display      string    `json:"display"`
 }
 
 type Name struct {
-	Inferred string `json:"@inferred,omitempty"`
+	Inferred bool   `json:"@inferred,omitempty"`
 	Type     string `json:"@type"`
 	First    string `json:"first"`
 	Middle   string `json:"middle"`
@@ -151,8 +147,8 @@ type Tag struct {
 	Content        string `json:"content"`
 }
 
-type Url struct {
-	Inferred string `json:"@inferred,omitempty"`
+type URL struct {
+	Inferred bool   `json:"@inferred,omitempty"`
 	SourceID string `json:"@source_id"`
 	Name     string `json:"@name"`
 	Category string `json:"@category"`
@@ -161,7 +157,7 @@ type Url struct {
 }
 
 type Phone struct {
-	Inferred             string `json:"@inferred,omitempty"`
+	Inferred             bool   `json:"@inferred,omitempty"`
 	Type                 string `json:"@type"`
 	CountryCode          int    `json:"country_code"`
 	Number               int    `json:"number"`
