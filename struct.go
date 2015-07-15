@@ -112,7 +112,7 @@ type Email struct {
 	Address       string `json:"address"`
 	AddressMd5    string `json:"address_md5"`
 	Disposable    string `json:"@disposable"`
-	EmailProvider string `json:"@email_provider"`
+	EmailProvider bool   `json:"@email_provider"`
 }
 
 type Image struct {
