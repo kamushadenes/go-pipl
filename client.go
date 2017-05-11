@@ -12,7 +12,7 @@ import (
 const (
 	libraryVersion = "0.1"
 	defaultBaseURL = "http://api.pipl.com/search/"
-	v4Version      = "v4"
+	v4Version      = "v5"
 	defaultTimeout = 10 * time.Second
 )
 
